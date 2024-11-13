@@ -1,0 +1,145 @@
+baseURL: "https://rouper.me"
+title: fangyuan99's Blog
+theme: PaperMod
+languageCode: zh-cn
+
+hasCJKLanguage: true
+enableRobotsTXT: true
+buildFuture: true
+buildDrafts: false
+buildExpired: false
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  DateFormat: "02 Jan 2006"
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: fangyuan99's Blog
+  description: "fangyuan99's Blog"
+  keywords: [Blog, Portfolio, PaperMod]
+  author: fangyuan99
+  # author: ["Me", "You"] # multiple authors
+  images: ["https://linux.do/user_avatar/linux.do/fangyuan99/288/203598_2.png"]
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  ShowShareButtons: false
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "/icon.svg"
+    favicon16x16: "/icon.svg"
+    favicon32x32: "/icon.svg"
+    apple_touch_icon: "/icon.svg"
+    safari_pinned_tab: "/icon.svg"
+
+  label:
+    text: "fangyuan99's Blog"
+    icon: /apple-touch-icon.png
+    iconHeight: 35
+
+  # profile-mode
+  profileMode:
+    enabled: true # needs to be explicitly set
+    title: fangyuan99
+    subtitle: "Focus is all you need!"
+    imageUrl: "https://linux.do/user_avatar/linux.do/fangyuan99/288/203598_2.png"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: fangyuan99
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  #   home-info mode
+  #   homeInfoParams:
+  #     Title: "Hi there \U0001F44B"
+  #     Content: Welcome to my blog
+
+  socialIcons:
+    - name: linux do
+      url: "https://linux.do/u/fangyuan99/summary"
+    - name: github
+      url: "https://github.com/fangyuan99"
+    - name: rss
+      url: "http://localhost:1313/posts/index.xml"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  #   editPost:
+  #     URL: "https://github.com/<path_to_repo>/content"
+  #     Text: "Suggest Changes" # edit text
+  #     appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+  # 添加文章默认设置
+  # mainSections:
+  #   - posts
+
+menu:
+  main:
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: search/
+      weight: 25
+    - identifier: Github
+      name: Github
+      url: https://github.com/fangyuan99
+      weight: 30
+
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
+
+outputs:
+  home:
+    - HTML # 生成的静态页面
+    - RSS # 这个其实无所谓
+    - JSON # necessary for search, 这里的配置修改好之后，一定要重新生成一下
